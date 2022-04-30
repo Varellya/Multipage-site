@@ -1,0 +1,120 @@
+// main: ../style.less
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(@dark-grey, .8);
+
+    transform: scale(0);
+
+    transition-delay: .3s;
+}
+
+.bg-modal_show {
+    transform: scale(100%);
+
+    transition-delay: -.3s;
+}
+
+.modal_privacy {
+    position: relative;
+
+    height: 80%;
+    margin: auto;
+    padding: 4rem;
+
+    border-radius: 6px;
+    
+    background-color: darken(@light-grey, 3);
+    box-shadow: 5px 5px 15px @black;
+
+    transform-origin: left top;
+    transform: scale(0);
+
+    transition: transform .3s linear;
+}
+
+.window-modal_show {
+    transform: scale(100%);
+}
+
+.modal_close {
+    position: absolute;
+    top: 13px;
+    right: 13px;
+    z-index: 1;
+
+    display: flex;
+
+    transition: transform .15s linear;
+
+    &:hover {
+        transform: rotate(90deg);
+    }
+}
+
+.ico_close {
+    width: 26px;
+    height: 26px;
+}
+
+.modal-privacy_inner {
+    display: flex;
+    flex-direction: column;
+    
+    height: 100%;
+}
+
+.modal_title {
+    margin-bottom: 2.5rem;
+    text-align: center;
+
+    font-size: 2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.modal_text {
+    height: 100%;
+    padding: 1.5rem;
+
+    font-size: 1.6rem;
+    font-weight: 400;
+
+    background-color: @white;
+    box-shadow: 0 0 5px inset rgba(@black, .3);
+
+    overflow-y: auto;
+}
+
+/*----------- Media Size -------------*/
+
+.modal {
+    .breakpoint (@mobile, {
+        .modal_privacy {
+            padding: 3rem 1.5rem 1.5rem;
+        }
+
+        .ico_close {
+            width: 12px;
+            height: 12px;
+        }
+
+        .modal_title {
+            margin-bottom: 1.8rem;
+            
+            font-size: 1.6rem;
+        }
+
+        .modal_text {
+            font-size: 1.3rem;
+        }
+    })
+}
+

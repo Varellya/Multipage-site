@@ -1,0 +1,329 @@
+// main: ../style.less
+
+.btn {
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1;
+    text-decoration: none;
+    color: @text-grey;
+
+    background-color: transparent;
+    border: none;
+
+    cursor: pointer;
+
+    transition: color .15s linear, background-color .15s linear;
+}
+
+.btn_profile {
+    margin-right: 3.5rem;
+    color: #999999;
+
+    .breakpoint (@laptop, {
+        margin-right: 2rem;
+
+        font-size: 1.2rem;
+    });
+
+    .breakpoint (@tablet, {
+        margin-right: 1.4rem;
+
+        font-size: 1.1rem;
+    });
+
+    .breakpoint (@mobile, {
+        margin-right: .8rem;
+
+        font-size: 1rem;
+    });
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    &:hover {
+        color: @aqua;
+    }
+}
+
+.btn_cart {
+    color: @white;
+
+    .breakpoint (@laptop, {
+        font-size: 1.2rem;
+    });
+
+    .breakpoint (@tablet, {
+        font-size: 1.1rem;
+    });
+
+    .breakpoint (@mobile, {
+        font-size: 1rem;
+    });
+}
+
+.btn_intro {
+    position: absolute;
+    bottom: 12rem;
+    right: 32rem;
+    z-index: 1;
+
+    padding: 2rem 3rem;
+
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    color: #454647;
+
+    background-color: @light-grey;
+    border: 2px solid #737373;
+
+    &:hover {
+        color: @white;
+        background-color: #737373;
+    }
+
+    .breakpoint (@desktopMedium, {
+        right: 18rem;
+    });
+
+    .breakpoint (@laptop, {
+        bottom: 6rem;
+        right: 10rem;
+
+        padding: 1.5rem 2.2rem;
+
+        font-size: 1.4rem;
+    });
+
+    .breakpoint (@tablet, {
+        right: 6rem;
+
+        font-size: 1.2rem;
+
+        padding: 1.3rem 2rem;
+    });
+
+    .breakpoint (@mobile, {
+        right: 3rem;
+
+        font-size: 1rem;
+
+        padding: 1rem 1.4rem;
+
+        border: 1px solid #737373;
+    });
+}
+
+.btn_product {
+    width: 3rem;
+    height: 3rem;
+    margin-right: 1.5rem;
+
+    background-color: @text-grey;
+    border-radius: 50%;
+
+    transition: background-color .1s linear;
+
+    .breakpoint (@mobile, {
+        width: 25px;
+        height: 25px;
+
+        img {
+            max-width: 12px;
+            max-height: 10px;
+        }
+    });
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    &:hover {
+        background-color: @aqua;
+    }
+
+    img {
+        display: flex;
+
+        max-width: 17px;
+        max-height: 15px;
+        margin: auto;
+    }
+
+    .breakpoint (@mobile, {
+        width: 25px;
+        height: 25px;
+
+        img {
+            max-width: 14px;
+            max-height: 12px;
+        }
+    });
+}
+
+.btn_lookbookHome,
+.btn_localStores,
+.btn_form {
+    padding: 2rem 3.2rem;
+
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    color: #454647;
+
+    border: 2px solid #737373;
+
+    transition: color .2s linear, background-color .2s linear;
+
+    &:hover {
+        color: @white;
+        background-color: @aqua;
+        border: 2px solid @aqua;
+    }
+
+    .breakpoint (@laptop, {
+        border: 1px solid #737373;
+
+        &:hover {
+            border: 1px solid @aqua;
+        }
+    });
+}
+
+.btn_lookbookHome {
+    margin-left: auto;
+
+    .breakpoint (@laptop, {
+        padding: 1.2rem 2rem;
+
+        font-size: 1.4rem;
+    });
+
+    .breakpoint (@mobile, {
+        padding: 1rem 1.5rem;
+
+        font-size: 1.2rem;
+    });
+}
+
+.btn_localStores {
+    .breakpoint (@tablet, {
+        padding: 1.6rem 2rem;
+
+        font-size: 1.4rem;
+    });
+
+    .breakpoint (@mobile, {
+        margin-left: auto;
+        padding: .8rem 1.2rem;
+
+        font-size: 1rem;
+    });
+}
+
+.btn_form {
+
+    .breakpoint (@laptop, {
+        padding: 1.8rem 2.8rem;
+
+        font-size: 1.5rem;
+    });
+
+    .breakpoint (@tablet, {
+        padding: 1.5rem 2.2rem;
+
+        font-size: 1.4rem;
+    });
+
+    .breakpoint (@mobile, {
+        margin-right: auto;
+        padding: 1rem 1.8rem;
+
+        font-size: 1.1rem;
+    });
+
+    &--product {
+        display: flex;
+
+        align-items: center;
+
+        margin-right: 2.5rem;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &:hover {
+            background-color: @dark-grey;
+            border: 2px solid @dark-grey;
+
+            .btnImg {
+                opacity: 0;
+
+                &--active_ico {
+                    opacity: 1;
+                }
+            }
+        }
+
+        .breakpoint (@laptop, {
+            padding: 1.4rem 2rem;
+            font-size: 1.3rem;
+
+            &:hover {
+                border: 1px solid @dark-grey;
+            }
+        });
+
+        .breakpoint (@tablet, {
+            padding: 1.2rem 1.6rem;
+            font-size: 1.2rem;
+
+            margin-top: 2rem;
+        });
+    }
+}
+
+.btn_sliderPhoto {
+    position: relative;
+
+    display: flex;
+
+    margin: auto 0;
+    padding: 1.4rem;
+
+    img {
+        width: 16px;
+    }
+    
+    &:hover {
+        background-color: @aqua;
+
+        .arrowSlide {
+            opacity: 0;
+        
+            &--active {
+                opacity: 1;
+            }
+        }
+    }
+
+    .breakpoint (@laptop, {
+        margin: auto 0;
+    })
+}
+
+.btn-productView_social {
+    height: 14px;
+
+    transition: transform .15s linear;
+
+    &:hover {
+        transform: scale(1.2);
+    }
+}
+
+

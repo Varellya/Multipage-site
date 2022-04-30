@@ -1,0 +1,127 @@
+// compress: true
+
+@import "vars.less";
+@import "mixins.less";
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    position: relative;
+    
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1;
+    color: @text-grey;
+}
+
+.no_scroll {
+    overflow: hidden;
+}
+
+.container {
+    width: 1200px;
+    margin: auto;
+    padding: 0 1.5rem;
+
+    &--modal {
+        display: flex;
+        
+        height: 100%;
+    }
+
+    &--footer {
+        display: flex;
+
+        height: 100%;
+    }
+
+    .breakpoint (@desktopLarge, {
+        width: 1060px;
+        padding: 0 3rem;
+
+        &--productView {
+            width: 1170px;
+            padding: 0 3rem;
+        }
+    });
+
+    .breakpoint (@laptop, {
+        width: 100%;
+        padding: 0 8rem;
+
+        &--productView {
+            padding: 0 4rem;
+        }
+    });
+
+    .breakpoint (@tablet, {
+        padding: 0 5rem;
+    });
+
+    .breakpoint (@mobile, {
+        padding: 0 1.2rem;
+    });
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+}
+
+h3 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #575153;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.4;
+    color: #8e8c8c;
+}
+
+.text_link {
+    text-decoration: none;
+    color: @aqua;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+
+/*----------- Blocks -----------*/
+
+@import "blocks/btn.less";
+
+@import "blocks/header.less";
+@import "blocks/introMain.less";
+@import "blocks/main.less";
+@import "blocks/lookbookHome.less";
+@import "blocks/infoContact.less";
+@import "blocks/footer.less";
+
+@import "blocks/introPages.less";
+
+@import "blocks/productView.less";
+@import "blocks/brand.less";
+@import "blocks/localStores.less";
+@import "blocks/signUp.less";
+
+@import "blocks/modal.less";
+
+

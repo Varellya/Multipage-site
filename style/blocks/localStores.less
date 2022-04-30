@@ -1,0 +1,274 @@
+// main: ../style.less
+
+.localStores_inner {
+    margin-bottom: 6rem;
+}
+
+.localStores_list {
+    display: flex;
+}
+
+.localStores_item {
+    display: flex;
+    flex-direction: column;
+
+    width: 33.33%;
+    padding-right: 3rem;
+
+    &:last-child {
+        padding-right: 0;
+    }
+}
+
+.localStores_address {
+    margin: 2.8rem 0 1.5rem;
+    text-transform: uppercase;
+}
+
+.localStores_description {
+    margin-bottom: 2.5rem;
+}
+
+.localStores_action {
+    display: flex;
+
+    margin: auto 0 0;
+}
+
+/*----------- All Stores Info ------------*/
+
+.localStores_allInfo {
+    position: relative;
+}
+
+.localStores-about_each {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    display: flex;
+
+    width: 100%;
+
+    transform: scaleY(0);
+    transform-origin: top;
+
+    transition: transform .3s linear;
+}
+
+.localStores-info_show {
+    position: relative;
+
+    transform: scaleY(100%);
+}
+
+.localStores_place {
+    display: flex;
+    width: 67%;
+}
+
+.localStores_geolocation {
+    display: flex;
+    width: 100%;
+
+    iframe {
+        width: 100%;
+    }
+}
+
+.localStores_info {
+    width: 33%;
+    padding: 4rem;
+
+    background-color: @light-grey;
+}
+
+.localStores_contact {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.localStores-contact_item {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 1.6rem;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.localStores-contact_ico {
+    max-width: 15px;
+    max-height: 18px;
+    margin-right: 1rem;
+}
+
+.localStores-contact_text {
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: #8e8c8c;
+}
+
+.localStores_social {
+    display: flex;
+
+    margin: 6rem 0 5rem;
+}
+
+.localStores-social_link {
+    display: flex;
+
+    width: 30px;
+    height: 30px;
+    margin-right: 1.4rem;
+
+    background-color: @text-grey;
+    border-radius: 50%;
+
+    transition: transform .15s linear;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    &:hover {
+        transform: translate(2px, -2px);
+    }
+}
+
+.localStores-social_ico {
+    max-width: 15px;
+    max-height: 17px;
+    margin: auto;
+}
+
+/*--------- Media Size ---------*/
+
+.localStores {
+    .breakpoint (@laptop, {
+
+        .localStores_item {
+            padding-right: 4rem;
+
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+
+        .localStores_place {
+            width: 55%;
+        }
+
+        .localStores_info {
+            width: 45%;
+        }
+    });
+
+    .breakpoint (@tablet, {
+
+        .localStores_address {
+            line-height: 1.3;
+        }
+
+        .localStores_description {
+            font-size: 1.4rem;
+        }
+
+        .localStores-about_each {
+            flex-direction: column-reverse;
+        }
+
+        .localStores_place {
+            width: 100%;
+            height: 400px;
+        }
+
+        .localStores_info {
+            width: 100%;
+        }
+
+        .localStores_social {
+            margin: 3.5rem 0 0;
+        }
+    });
+
+    .breakpoint (@mobile, {
+
+        .localStores_inner {
+            margin-bottom: 3rem;
+        }
+
+        .localStores_list {
+            flex-direction: column;
+        }
+
+        .localStores_item {
+            width: 100%;
+            margin-bottom: 2.2rem;
+            padding: 0 1.5rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .localStores_city {
+            font-size: 1.4rem;
+        }
+
+        .localStores_address {
+            margin: 1.5rem 0 .8rem;
+
+            font-size: 1.1rem;
+        }
+
+        .localStores_description {
+            margin-bottom: 1.6rem;
+
+            font-size: 1.1rem;
+        }
+
+        .localStores_place {
+            height: 230px;
+        }
+
+        .localStores_info {
+            padding: 1.8rem;
+        }
+
+        .localStores-contact_item {
+            margin-bottom: 1rem;
+        }
+
+        .localStores-contact_ico {
+            margin-right: 0.6rem;
+
+            transform: scale(80%);
+        }
+
+        .localStores-contact_text {
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .localStores_social {
+            margin-top: 1.5rem;
+        }
+
+        .localStores-social_link {
+            width: 25px;
+            height: 25px;
+        }
+
+        .localStores-social_ico {
+            max-width: 12px;
+            max-height: 14px;
+        }
+    });
+}
+

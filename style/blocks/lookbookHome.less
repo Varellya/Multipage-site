@@ -1,0 +1,173 @@
+// main: ../style.less
+
+.lookbookHome {
+    display: flex;
+
+    width: 100%;
+}
+
+.lookbookHome_item {
+    position: relative;
+
+    display: flex;
+
+    width: calc(33.33% - 2rem);
+
+    margin-right: 3rem;
+    padding: 4.5rem 5rem 0 2.5rem;
+
+    background-color: @light-grey;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.lookbookHome_photo {
+    position: absolute;
+    bottom: 0;
+    
+    max-width: 30%;
+}
+
+.lookbookHome_about {
+    position: relative;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    max-width: 60%;
+    margin: 5rem 0 8rem auto;
+
+    text-align: right;
+}
+
+.lookbookHome_title {
+    text-align: right;
+
+    font-size: 4.8rem;
+    font-weight: 300;
+    line-height: 1.15;
+    text-transform: uppercase;
+    color: #575153;
+
+    span {
+        font-weight: 700;
+    }
+}
+
+.lookbookHome_text {
+    margin: 2.2rem 0 2.6rem;
+    
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.4rem;
+    line-height: 1.45;
+}
+
+.lookbookHome_more {
+    display: flex;
+}
+
+/*---------- Media Size -----------*/
+
+.lookbookHome {
+    .breakpoint (@desktopMedium, {
+
+        .lookbookHome_item {
+            padding-top: 0;
+        }
+
+        .lookbookHome_title {
+            font-size: 4rem;
+        }
+
+        .lookbookHome_text {
+            font-size: 1.3rem;
+        }
+    });
+
+    .breakpoint (@laptop, {
+
+        .lookbookHome_item {
+            padding-right: 3rem;
+        }
+
+        .lookbookHome_title {
+            font-size: 3.6rem;
+        }
+
+        .lookbookHome_text {
+            font-size: 1.2rem;
+        }
+    });
+
+    .breakpoint (@tablet, {
+        flex-direction: column;
+
+        .lookbookHome_item {
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 3rem;
+            padding: 0 10%;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .lookbookHome_photo {
+            max-height: 90%;
+        }
+
+        .lookbookHome_about {
+            text-align: left;
+        }
+
+        .lookbookHome_title {
+            margin-right: auto;
+
+            text-align: left;
+
+            font-size: 3.6rem;
+        }
+
+        .lookbookHome_text {
+            font-size: 1.2rem;
+        }
+    });
+
+    .breakpoint (@mobile, {
+
+        .lookbookHome_item {
+            margin-bottom: 1.6rem;
+            padding: 0 2.5rem;
+        }
+
+        .lookbookHome_photo {
+            max-width: 25%;
+            max-height: 80%;
+        }
+
+        .lookbookHome_about {
+            text-align: right;
+
+            width: 100%;
+            max-width: 75%;
+            margin: 2.5rem 0 2.5rem auto;
+        }
+
+        .lookbookHome_title {
+            text-align: right;
+
+            margin-right: 0;
+
+            font-size: 2.4rem;
+        }
+
+        .lookbookHome_text {
+            font-size: 1rem;
+        }
+    });
+}
+
